@@ -46,3 +46,17 @@ blender file provided to test on other image size
 TODO
 -----
 Support other image formats
+
+Hints
+-----
+The original images are from [here](https://github.com/AprilRobotics/apriltag-imgs) and then scaled to 170*170px using the following command
+
+.. code-block:: bash
+
+    convert ./original_images/tag52_13_00000.png -scale 1700% ./images/Marker0.png
+
+Example: The following command generates a marker of size 100mm and without borders. See [here](https://github.com/AprilRobotics/apriltag_ros#tag-size-definition) for tag size defnition
+
+.. code-block:: bash
+
+    ./scripts/generate_markers_model.py -i ./images -s 100 -w 0
