@@ -1,4 +1,4 @@
-#! /usr/bin/env python
+#! /usr/bin/env python3
 from __future__ import print_function
 
 import argparse
@@ -79,12 +79,25 @@ for image_file in file_list:
     if args.verbose:
         print(cmd)
     os.system(cmd)
+    
+    #image_dest_path = os.path.join(
+    #    args.gazebodir,
+    #    filename_without_ext.lower(),
+    #    "meshes", "textures", image_file)
+    #cmd = "cp " + image_file_path + " " + \
+    #      image_dest_path
+
+    #if args.verbose:
+    #    print(cmd)
+    #os.system(cmd)
+
     image_dest_path = os.path.join(
         args.gazebodir,
         filename_without_ext.lower(),
-        "materials", "textures", image_file)
+        "meshes", image_file)
     cmd = "cp " + image_file_path + " " + \
           image_dest_path
+
     if args.verbose:
         print(cmd)
     os.system(cmd)
